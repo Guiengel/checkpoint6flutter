@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gerador_de_senha/routes.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -8,7 +10,26 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  void initState() {
+    super.initState();
+        Future.delayed(Duration(seconds: 3));
+    {
+      if (!mounted) return;
+      Navigator.pushReplacementNamed(context, Routes.intro);
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SizedBox.expand(
+        child: Lottie.asset(
+          'assets/lottie/splash.json',
+          width: 200,
+          height: 200,
+          fit: BoxFit.contain,
+        ),
+      ),
+    );
   }
 }
