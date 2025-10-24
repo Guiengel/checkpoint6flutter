@@ -33,6 +33,8 @@ migrate_working_dir/
 .pub/
 /build/
 
+android/app/google-services.json
+
 # Environment variables
 .env
 

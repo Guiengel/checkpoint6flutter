@@ -3,7 +3,6 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -47,26 +46,26 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static final FirebaseOptions android = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_AND']!,
-    appId: dotenv.env['APP_ID_AND']!,
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyC75DUEUpwBOzycqVX8BWaVM-B4ZBW0iKc',
+    appId: '1:1054039258694:android:a63754a6b44dafe55c3c47',
     messagingSenderId: '1054039258694',
     projectId: 'checkpoint6-e87bd',
     storageBucket: 'checkpoint6-e87bd.firebasestorage.app',
   );
 
-  static final FirebaseOptions ios = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_IOS']!,
-    appId: dotenv.env['APP_ID_IOS']!,
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBHdejw0KyCQ6DTylUGwAv3Bk9pzVnm2cc',
+    appId: '1:1054039258694:ios:bd130e66f9294c935c3c47',
     messagingSenderId: '1054039258694',
     projectId: 'checkpoint6-e87bd',
     storageBucket: 'checkpoint6-e87bd.firebasestorage.app',
     iosBundleId: 'br.com.guiengel.geradorDeSenha',
   );
 
-  static final FirebaseOptions windows = FirebaseOptions(
-    apiKey: dotenv.env['API_KEY_WIN']!,
-    appId: dotenv.env['APP_ID_WIN']!,
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCSCKanYDxCTinOzfd9_4sW7D29JZeZ_Uc',
+    appId: '1:1054039258694:web:574dfa3d77622a695c3c47',
     messagingSenderId: '1054039258694',
     projectId: 'checkpoint6-e87bd',
     authDomain: 'checkpoint6-e87bd.firebaseapp.com',
