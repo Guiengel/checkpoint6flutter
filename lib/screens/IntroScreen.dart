@@ -122,7 +122,7 @@ class _IntroScreenState extends State<IntroScreen> {
   }
 
   _finishIntro() {
-    Navigator.pushReplacementNamed(context, Routes.home);
+    Navigator.pushReplacementNamed(context, Routes.login);
   }
 
   void _onNext() {
