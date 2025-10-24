@@ -37,6 +37,7 @@ dependencies:
   lottie: 3.3.1
   firebase_core: ^4.1.1
   flutter_dotenv: ^6.0.0
+  firebase_auth: ^6.1.0
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +56,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+  - .env
   - assets/lottie/splash.json
   - assets/lottie/intro1.json
   - assets/lottie/intro2.json
