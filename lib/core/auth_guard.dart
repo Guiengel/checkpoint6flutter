@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gerador_de_senha/screens/HomeScreen.dart';
 import 'package:gerador_de_senha/screens/LoginERegistro.dart';
 import 'package:gerador_de_senha/screens/SplashScreen.dart';
-
+/*
 class AuthGuard extends StatelessWidget {
   final Widget child;
   const AuthGuard({super.key, required this.child});
@@ -16,13 +17,10 @@ class AuthGuard extends StatelessWidget {
             body: Center(child: CircularProgressIndicator()),
           );
         }
-        if (snapshot.hasData) {
-          // usuário autenticado → mostra a tela
-          return child;
-        }
         // não logado → redireciona para Login
         return const SplashScreen();
       },
     );
   }
 }
+*/

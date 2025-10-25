@@ -1,6 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gerador_de_senha/routes.dart';
 import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -31,6 +33,29 @@ class _IntroScreenState extends State<IntroScreen> {
       'lottie': 'assets/lottie/intro3.json',
     },
   ];
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  Future<void> _finishIntro() async {
+    // salva a preferência se marcado
+    final prefs = await SharedPreferences.getInstance();
+    if (_dontShowAgain) {
+      await prefs.setBool('show_intro', false);
+    }
+
+    // decide destino conforme estado do Auth
+    final user = FirebaseAuth.instance.currentUser;
+    if (!mounted) return;
+    if (user != null) {
+      Navigator.pushReplacementNamed(context, Routes.home);
+    } else {
+      Navigator.pushReplacementNamed(context, Routes.login);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -119,10 +144,6 @@ class _IntroScreenState extends State<IntroScreen> {
         ),
       ),
     );
-  }
-
-  _finishIntro() {
-    Navigator.pushReplacementNamed(context, Routes.login);
   }
 
   void _onNext() {

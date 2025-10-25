@@ -67,7 +67,6 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.splash,
       onGenerateRoute: Routes.generateRoute,
       debugShowCheckedModeBanner: false,
-      home: const AuthGuard(child: SplashScreen()),
     );
   }
 }
