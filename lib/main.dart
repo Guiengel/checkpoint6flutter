@@ -3,7 +3,10 @@ import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:gerador_de_senha/core/auth_guard.dart';
 import 'package:gerador_de_senha/routes.dart';
+import 'package:gerador_de_senha/screens/HomeScreen.dart';
+import 'package:gerador_de_senha/screens/SplashScreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -64,6 +67,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.splash,
       onGenerateRoute: Routes.generateRoute,
       debugShowCheckedModeBanner: false,
+      home: const AuthGuard(child: SplashScreen()),
     );
   }
 }
