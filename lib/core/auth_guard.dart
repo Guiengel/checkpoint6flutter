@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:gerador_de_senha/screens/HomeScreen.dart';
-import 'package:gerador_de_senha/screens/LoginERegistro.dart';
-import 'package:gerador_de_senha/screens/SplashScreen.dart';
-/*
+import 'package:gerador_de_senha/routes.dart';
+
 class AuthGuard extends StatelessWidget {
   final Widget child;
   const AuthGuard({super.key, required this.child});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
@@ -14,13 +13,31 @@ class AuthGuard extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
+            body: Center(
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2196F3)),
+              ),
+            ),
           );
         }
-        // não logado → redireciona para Login
-        return const SplashScreen();
+        
+        // Se não estiver logado, redireciona para login
+        if (snapshot.data == null) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            Navigator.pushReplacementNamed(context, Routes.login);
+          });
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2196F3)),
+              ),
+            ),
+          );
+        }
+        
+        // Se estiver logado, mostra o conteúdo protegido
+        return child;
       },
     );
   }
 }
-*/

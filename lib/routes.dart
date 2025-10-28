@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gerador_de_senha/core/auth_guard.dart';
 import 'package:gerador_de_senha/screens/HomeScreen.dart';
 import 'package:gerador_de_senha/screens/LoginERegistro.dart';
 import 'package:gerador_de_senha/screens/NewPasswordScreen.dart';
@@ -20,11 +21,15 @@ class Routes {
       case intro:
         return MaterialPageRoute(builder: (_) => IntroScreen());
       case home:
-        return MaterialPageRoute(builder: (_) => HomeScreen());
+        return MaterialPageRoute(
+          builder: (_) => const AuthGuard(child: HomeScreen()),
+        );
       case login:
         return MaterialPageRoute(builder: (_) => LoginERegistro());
       case password:
-        return MaterialPageRoute(builder: (_) => NewPasswordScreen());
+        return MaterialPageRoute(
+          builder: (_) => const AuthGuard(child: NewPasswordScreen()),
+        );
         
       default:
         return MaterialPageRoute(

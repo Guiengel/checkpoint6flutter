@@ -24,12 +24,12 @@ class _IntroScreenState extends State<IntroScreen> {
     },
     {
       'title': 'Funcionalidades',
-      'subtitle': 'Gere suas senhas!',
+      'subtitle': 'Explore as diversas funcionalidades.',
       'lottie': 'assets/lottie/intro2.json',
     },
     {
-      'title': 'Comece Agora',
-      'subtitle': 'Vamos começar a usar o app!',
+      'title': 'Vamos começar?',
+      'subtitle': 'Pronto para usar o seu app com segurança.',
       'lottie': 'assets/lottie/intro3.json',
     },
   ];
@@ -83,15 +83,19 @@ class _IntroScreenState extends State<IntroScreen> {
                         Expanded(child: Lottie.asset(page['lottie']!)),
                         Text(
                           page['title']!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
+                            color: Color(0xFF333333),
                           ),
                         ),
-                        SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         Text(
                           page['subtitle']!,
-                          style: TextStyle(fontSize: 16),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Color(0xFF666666),
+                          ),
                           textAlign: TextAlign.center,
                         ),
                       ],
@@ -114,8 +118,13 @@ class _IntroScreenState extends State<IntroScreen> {
                         });
                       },
                     ),
-                    Expanded(
-                      child: Text('Não mostrar essa introdução novamente.'),
+                    const Expanded(
+                      child: Text(
+                        'Não mostrar essa introdução novamente.',
+                        style: TextStyle(
+                          color: Color(0xFF666666),
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -130,12 +139,28 @@ class _IntroScreenState extends State<IntroScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (_currentPage > 0)
-                    TextButton(onPressed: _onBack, child: Text("Voltar"))
+                    TextButton(
+                      onPressed: _onBack,
+                      child: const Text(
+                        "Voltar",
+                        style: TextStyle(
+                          color: Color(0xFF2196F3),
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
                   else
-                    SizedBox(width: 80),
+                    const SizedBox(width: 80),
                   TextButton(
                     onPressed: _onNext,
-                    child: Text(isLastPage ? 'Concluir' : 'Avançar'),
+                    child: Text(
+                      isLastPage ? 'Concluir' : 'Avançar',
+                      style: const TextStyle(
+                        color: Color(0xFF2196F3),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ),
                 ],
               ),
