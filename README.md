@@ -74,7 +74,7 @@ lib/
 ### **Instalação**
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/gerador-senhas.git
+git clone https://github.com/Guiengel/checkpoint6flutter.git
 
 # Entre no diretório
 cd gerador-senhas
@@ -331,22 +331,7 @@ try {
 - Tratamento de erros
 - Estados de loading
 
----
 
-## 📈 **Melhorias Futuras**
-
-- [ ] Biometria para autenticação
-- [ ] Categorização de senhas
-- [ ] Exportação de senhas
-- [ ] Modo escuro
-- [ ] Notificações de senhas expiradas
-
----
-
-## 📞 **Contato**
-
-- **Cesar Iglesias** - RM: 98007
-- **Guilherme Luis Engel** - RM: 87438
 
 ---
 
