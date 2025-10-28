@@ -19,13 +19,6 @@ Aplicativo Flutter integrado ao Firebase Authentication e Cloud Firestore que pe
 - ✅ Interface moderna com animações Lottie
 - ✅ Proteção de rotas com autenticação
 
----
-
-## 🎥 **Demonstração em Vídeo**
-
-> **📹 [CLIQUE AQUI PARA ASSISTIR AO VÍDEO DEMONSTRATIVO](https://youtube.com/watch?v=SEU_VIDEO_AQUI)**
-> 
-> *O vídeo mostra todas as funcionalidades do aplicativo em funcionamento*
 
 ---
 
